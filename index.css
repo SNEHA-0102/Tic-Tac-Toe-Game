@@ -1,0 +1,121 @@
+* {
+    padding: 0;
+    margin: 0;
+    background-color: #453823;
+    text-align: center;
+    box-sizing: border-box; /* Better control of box sizing */
+}
+
+h1 {
+    margin-top: 20px;
+    color: antiquewhite;
+}
+
+.container {
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; /* Column layout for small screens */
+}
+
+.game {
+    width: fit-content; /* Ensure the game container wraps around the boxes */
+    display: grid;
+    grid-template-columns: repeat(3, 100px); /* Fixed size for 3x3 grid */
+    grid-template-rows: repeat(3, 100px);
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.box {
+    height: 100px;
+    width: 100px;
+    border-radius: 12px;
+    box-shadow: 0 0 1rem rgba(255, 255, 255, 0.1);
+    font-size: 60px;
+    color: rgb(105, 66, 14);
+    border: solid 2px black; /* Added black border */
+    background-color: rgb(224, 177, 114);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.2s; /* Smooth scaling effect */
+}
+
+/* Adding hover effect */
+.box:hover {
+    transform: scale(1.05);
+}
+
+/* Different colors for X and O */
+.x-player {
+    color: rgb(210, 124, 11); /* X will be orange */
+}
+
+.o-player {
+    color: rgb(79, 49, 9); /* O will be brown */
+}
+
+#reset_btn, #new-btn {
+    height: 70px;
+    width: 120px;
+    align-items: center;
+    font-size: 30px;
+    border: antiquewhite;
+    color: rgb(197, 139, 63);
+    background-color: antiquewhite;
+    border-radius: 12px;
+    box-shadow: 0 0 1rem rgba(255, 255, 255, 0.1);
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+#new-btn {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.msg-cont {
+    color: antiquewhite;
+    font-size: 35px;
+    margin-top: 20px;
+}
+
+.hide {
+    display: none;
+}
+
+/* Responsive design adjustments */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 20px; /* Reduce font size */
+    }
+
+    .container {
+        flex-direction: column;
+    }
+
+    .game {
+        grid-template-columns: repeat(3, 75px); /* Keep grid but with smaller boxes */
+        grid-template-rows: repeat(3, 75px);  
+        gap: 5px;       /* Smaller gap between boxes */
+    }
+
+    .box {
+        height: 75px;   /* Smaller size for boxes */
+        width: 75px;
+        font-size: 40px; /* Adjust font size for better fit */
+    }
+
+    #reset_btn, #new-btn {
+        height: 50px;
+        width: 85px;  /* Slightly smaller buttons */
+        font-size: 18px;
+    }
+
+    .msg-cont {
+        font-size: 28px; /* Adjust text size for message */
+    }
+}
